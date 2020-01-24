@@ -20,5 +20,5 @@ Apply here:https://job-openings.monster.com/remote-python-developer-python-flask
     Convert whitespaces to "-" e.g(software-developer)
 ```
 
-##Note:  
+## Note:  
 **youtube scraper has some issues with pytube, still waiting for updated version to resolve KeyError**
