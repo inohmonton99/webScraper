@@ -3,19 +3,21 @@
 
 import requests
 from bs4 import BeautifulSoup
-import sys
 
-if len(sys.argv) < 3 or len(sys.argv) > 3:
-    print("Usage: python WebScraper.py <URL> <Keyword> ")
+url = "https://www.monster.com/jobs/search/?"
+q = input("What job are you looking for? ")
+where = input("Where do you plan on working? ")
+if q and where:
+    url = url + f"q={q}" + f"&where={where}"
+else:
+    print("Please try again...")
     exit()
-url = sys.argv[1]
-search_string = sys.argv[2]
 page = requests.get(url)
-
 soup = BeautifulSoup(page.content, 'html.parser')
-
-python_jobs = soup.find_all('h2',
-                            string=lambda text: search_string in text.lower())
+results = soup.find(id='ResultsContainer')
+new_string = ''.join([str(elem) for elem in q])
+python_jobs = results.find_all('h2',
+                               string=lambda text: new_string in text.lower())
 
 print(f"Match Results:{len(python_jobs)}")
 
