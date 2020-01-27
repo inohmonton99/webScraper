@@ -20,5 +20,12 @@ Apply here:https://job-openings.monster.com/remote-python-developer-python-flask
     Convert whitespaces to "-" e.g(software-developer)
 ```
 
+```bash
+python ebayscraper.py
+What are you searching for? computers
+Matches found: 62
+File saved to ebay.csv
+```
+
 ## Note:  
 **youtube scraper has some issues with pytube, still waiting for updated version to resolve KeyError**
